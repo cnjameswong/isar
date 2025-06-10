@@ -43,8 +43,15 @@ jobs:
         uses: ./.github/actions/prepare-build
       - name: Set Isar Version
         run: echo "ISAR_VERSION=${{ github.ref_name }}" >> $GITHUB_ENV
+      - uses: nttld/setup-ndk@v1
+        id: setup-ndk
+        with:
+          ndk-version: r28b
+          add-to-path: false
       - name: Build binary
         run: bash tool/${{ matrix.script }}
+        env:
+          ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
       - name: Upload binary
         uses: svenstaro/upload-release-action@v2
         with:
