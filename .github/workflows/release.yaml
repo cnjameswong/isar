@@ -30,7 +30,7 @@ jobs:
           - os: macos-latest
             artifact_name: libisar_macos.dylib
             script: build_macos.sh
-          - os: windows-latest
+          - os: windows-2025
             artifact_name: isar_windows_x64.dll
             script: build_windows.sh x64
           - os: ubuntu-latest
