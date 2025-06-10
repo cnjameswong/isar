@@ -31,3 +31,11 @@ runs:
       run: >
         find -L $ANDROID_SDK_ROOT/ndk/$ANDROID_NDK_VERSION -name libunwind.a
         -execdir sh -c 'echo "INPUT(-lunwind)" > libgcc.a' \;
+    - name: "set up Android NDK"
+      if: runner.os == 'Linux' || runner.os == 'macOS'
+      uses: nttld/setup-ndk@v1
+      with:
+        ndk-version: r28b
+        local-cache: true
+
+
