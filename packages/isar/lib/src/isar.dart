@@ -19,7 +19,7 @@ abstract class Isar {
   static const int defaultMaxSizeMiB = 128;
 
   /// The current Isar version.
-  static const String version = '4.0.0-dev.14';
+  static const String version = '4.0.0-zjh.1';
 
   /// Use this value for the `directory` parameter to create an in-memory
   /// database.
